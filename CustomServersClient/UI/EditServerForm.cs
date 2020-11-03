@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 using System.Windows.Forms;
 
 namespace CustomServersClient.UI
@@ -27,7 +28,31 @@ namespace CustomServersClient.UI
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            serverInfo = new CustomServerInfo(nameTextBox.Text, ipTextBox.Text, (ushort)portNumericUD.Value);
+            string address = ipTextBox.Text;
+
+            if (!IPAddress.TryParse(address, out _))
+            {
+                try
+                {
+                    CustomServersPlugin.Logger.LogWarning($"Resolving IP address for domain \"{address}\"...");
+
+                    var adresses = Dns.GetHostAddresses(address);
+                    if (adresses != null && adresses.Length > 0)
+                    {
+                        address = adresses[0].ToString();
+                    }
+                    else
+                    {
+                        CustomServersPlugin.Logger.LogWarning($"Failed to resolve IP adress from domain name! DNS resolution failed for address \"{address}\"");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    CustomServersPlugin.Logger.LogWarning($"Failed to resolve IP adress from domain name! Exception:\n{ex}");
+                }
+            }
+
+            serverInfo = new CustomServerInfo(nameTextBox.Text, address, (ushort)portNumericUD.Value);
             savePressed?.Invoke(serverInfo);
             Hide();
         }

@@ -7,9 +7,14 @@ using System.Linq;
 using UnhollowerBaseLib;
 using CustomServersClient.UI;
 
-using RegionMenuLambda = RegionMenu.IOCEJPCJFKF;
-using RegionInfo = KMDGIDEDGGM;
-using ServerInfo = EEKGADNPDBH;
+using RegionMenu = IPCOMKKGKCK;
+using RegionMenuLambda = IPCOMKKGKCK.EBGBGOPHHAM;
+using RegionInfo = CDLOPBGDBHF;
+using ServerInfo = GBBLLNNMEBG;
+using ServerManager = FOLCACGIEIK;
+using InnerNetClient = DNAFMCDBMCI;
+using ObjectPoolBehavior = EGLDLAINKEP;
+using PassiveButton = BFBMELJEFCH;
 
 namespace CustomServersClient
 {
@@ -22,31 +27,6 @@ namespace CustomServersClient
         static bool _firstRun = true;
         static ServersManagementForm _managementForm;
 
-        [HarmonyDebug]
-        [HarmonyPatch(typeof(InnerNetClient), nameof(InnerNetClient.SetEndpoint), typeof(string), typeof(ushort))]
-        public static class InnerNetClientSetEndPointPatch
-        {
-            public static bool Prefix(string EMFDKKLLHCL, ushort JOBBGKDMALK, ref InnerNetClient __instance)
-            {
-                var customServer = customServers.FirstOrDefault(x => x.ToString() == EMFDKKLLHCL);
-
-                if (customServer != default)
-                {
-                    CustomServersPlugin.Logger.LogDebug($"Setting IP and port for custom server \"{customServer.name}\"!");
-                    __instance.HECFEPIMCOE = customServer.ip;
-                    __instance.DNGDMFHEJBA = customServer.port;
-                }
-                else
-                {
-                    __instance.HECFEPIMCOE = EMFDKKLLHCL;
-                    __instance.DNGDMFHEJBA = JOBBGKDMALK;
-                }
-
-                return false;
-            }
-        }
-
-        [HarmonyDebug]
         [HarmonyPatch(typeof(RegionMenu), nameof(RegionMenu.OnEnable))]
         public static class RegionMenuOnEnablePatch
         {
@@ -91,7 +71,7 @@ namespace CustomServersClient
 
                     for (int i = 0; i < customServers.Count; i++)
                     {
-                        Il2CppReferenceArray<ServerInfo> servers = new ServerInfo[1] { new ServerInfo(customServers[i].name, customServers[i].ToString(), (ushort)customServers[i].port) };
+                        Il2CppReferenceArray<ServerInfo> servers = new ServerInfo[1] { new ServerInfo(customServers[i].name, customServers[i].ip, (ushort)customServers[i].port) };
 
                         regions[i + 4] = new RegionInfo(customServers[i].name, "0", servers);
                     }
@@ -120,18 +100,19 @@ namespace CustomServersClient
             }
         }
 
-        [HarmonyDebug]
+        
         [HarmonyPatch(typeof(RegionMenuLambda), nameof(RegionMenuLambda.Method_Internal_Void_0))]
         public static class RegionMenuChooseOptionPatch
         {
             public static bool Prefix(ref RegionMenuLambda __instance)
             {
-                if (__instance.region.NCDMJOGPKOL == "MANAGE_SERVERS")
+                if (__instance.region.LCMJAAECKPN == "MANAGE_SERVERS")
                 {
+                    
                     if(_managementForm == null || _managementForm.IsDisposed)
                         _managementForm = new ServersManagementForm();
 
-                    _managementForm.regionMenu = __instance.field_Public_RegionMenu_0;
+                    _managementForm.regionMenu = __instance.field_Public_IPCOMKKGKCK_0;
 
                     if (_managementForm.Visible)
                         _managementForm.Focus();
@@ -144,7 +125,6 @@ namespace CustomServersClient
                 {
                     return true;
                 }
-
             }
         }
     }

@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 
+using RegionMenu = IPCOMKKGKCK;
+
 namespace CustomServersClient.UI
 {
     public partial class ServersManagementForm : Form

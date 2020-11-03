@@ -19,7 +19,7 @@ namespace CustomServersClient
         {
             Logger = Log;
 
-            _harmony = Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), "andruzzzhka.customserversclient");
+            _harmony = Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), "com.andruzzzhka.customserversclient");
 
             Logger.LogDebug("Applied Harmony patches!");
         }
