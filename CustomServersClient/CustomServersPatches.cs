@@ -7,14 +7,13 @@ using System.Linq;
 using UnhollowerBaseLib;
 using CustomServersClient.UI;
 
-using RegionMenu = IPCOMKKGKCK;
-using RegionMenuLambda = IPCOMKKGKCK.EBGBGOPHHAM;
-using RegionInfo = CDLOPBGDBHF;
-using ServerInfo = GBBLLNNMEBG;
-using ServerManager = FOLCACGIEIK;
-using InnerNetClient = DNAFMCDBMCI;
-using ObjectPoolBehavior = EGLDLAINKEP;
-using PassiveButton = BFBMELJEFCH;
+using RegionMenu = MBLPKNNOCML;
+using RegionMenuButtonCallback = MBLPKNNOCML.BLFMBBEHPJN;
+using RegionInfo = GCFFHMOOGLH;
+using ServerInfo = PDMHFECFBEP;
+using ServerManager = CDDEBEELDGO;
+using ObjectPoolBehavior = MCBLFCIMCDB;
+using PassiveButton = ONEEHOKANFC;
 
 namespace CustomServersClient
 {
@@ -101,18 +100,18 @@ namespace CustomServersClient
         }
 
         
-        [HarmonyPatch(typeof(RegionMenuLambda), nameof(RegionMenuLambda.Method_Internal_Void_0))]
+        [HarmonyPatch(typeof(RegionMenuButtonCallback), nameof(RegionMenuButtonCallback.Method_Internal_Void_0))]
         public static class RegionMenuChooseOptionPatch
         {
-            public static bool Prefix(ref RegionMenuLambda __instance)
+            public static bool Prefix(ref RegionMenuButtonCallback __instance)
             {
-                if (__instance.region.LCMJAAECKPN == "MANAGE_SERVERS")
+                if (__instance.region.CMADHJOPGHF == "MANAGE_SERVERS")
                 {
                     
                     if(_managementForm == null || _managementForm.IsDisposed)
                         _managementForm = new ServersManagementForm();
 
-                    _managementForm.regionMenu = __instance.field_Public_IPCOMKKGKCK_0;
+                    _managementForm.regionMenu = __instance.field_Public_MBLPKNNOCML_0;
 
                     if (_managementForm.Visible)
                         _managementForm.Focus();
