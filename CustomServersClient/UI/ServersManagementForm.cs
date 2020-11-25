@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 
-using RegionMenu = MBLPKNNOCML;
+using RegionMenu = LEIOFKPCJOO;
 
 namespace CustomServersClient.UI
 {

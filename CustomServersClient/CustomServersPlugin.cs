@@ -5,7 +5,7 @@ using System.Reflection;
 
 namespace CustomServersClient
 {
-    [BepInPlugin("com.andruzzzhka.customserversclient", "Custom Servers Client", "1.2.0.0")]
+    [BepInPlugin("com.andruzzzhka.customserversclient", "Custom Servers Client", "1.2.1.0")]
     public class CustomServersPlugin : BasePlugin
     {
         public const string userDataPath = "UserData";
