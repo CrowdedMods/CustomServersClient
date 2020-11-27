@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 
-using RegionMenu = LEIOFKPCJOO;
+using RegionMenu = MBLPKNNOCML;
 
 namespace CustomServersClient.UI
 {
@@ -69,7 +69,7 @@ namespace CustomServersClient.UI
 
         private void removeBtn_Click(object sender, EventArgs e)
         {
-            if(_selectedServer != null)
+            if (_selectedServer != null)
             {
                 _customServers.Remove(_selectedServer);
                 serversListBox.Items.Remove(_selectedServer);
