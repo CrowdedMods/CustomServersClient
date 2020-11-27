@@ -32,28 +32,23 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="0Harmony">
-      <HintPath>..\..\..\..\..\Music\Among Us 2020.11.17\BepInEx\core\0Harmony.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\BepInEx\core\0Harmony.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\..\..\Music\Among Us 2020.11.17\BepInEx\unhollowed\Assembly-CSharp.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\BepInEx\unhollowed\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="BepInEx.Core">
-      <HintPath>..\..\..\..\..\Music\Among Us 2020.11.17\BepInEx\core\BepInEx.Core.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\BepInEx\core\BepInEx.Core.dll</HintPath>
     </Reference>
     <Reference Include="BepInEx.IL2CPP">
-      <HintPath>..\..\..\..\..\Music\Among Us 2020.11.17\BepInEx\core\BepInEx.IL2CPP.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\BepInEx\core\BepInEx.IL2CPP.dll</HintPath>
     </Reference>
     <Reference Include="Il2Cppmscorlib">
-      <HintPath>..\..\..\..\..\Music\Among Us 2020.11.17\BepInEx\unhollowed\Il2Cppmscorlib.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\BepInEx\unhollowed\Il2Cppmscorlib.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>D:\andru\Desktop\Among Us\BepInEx\core\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\BepInEx\core\Newtonsoft.Json.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -67,20 +62,16 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="UnhollowerBaseLib">
-      <HintPath>..\..\..\..\..\Music\Among Us 2020.11.17\BepInEx\core\UnhollowerBaseLib.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\BepInEx\core\UnhollowerBaseLib.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
-      <HintPath>..\..\..\..\..\Music\Among Us 2020.11.17\BepInEx\unhollowed\UnityEngine.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\BepInEx\unhollowed\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\..\..\..\..\Music\Among Us 2020.11.17\BepInEx\unhollowed\UnityEngine.CoreModule.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\BepInEx\unhollowed\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>..\..\..\..\..\Music\Among Us 2020.11.17\BepInEx\unhollowed\UnityEngine.UI.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\BepInEx\unhollowed\UnityEngine.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
