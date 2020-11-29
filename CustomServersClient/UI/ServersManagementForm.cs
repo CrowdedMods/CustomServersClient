@@ -4,7 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 
+#if STEAM
 using RegionMenu = LEIOFKPCJOO;
+#elif ITCH
+using RegionMenu = KIPLKPEOBEO;
+#endif
 
 namespace CustomServersClient.UI
 {
