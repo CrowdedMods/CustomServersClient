@@ -30,26 +30,46 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Steam-Release|AnyCPU' ">
+    <OutputPath>bin\Steam-Release\</OutputPath>
+    <DefineConstants>TRACE;STEAM</DefineConstants>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Itch-Release|AnyCPU' ">
+    <OutputPath>bin\Itch-Release\</OutputPath>
+    <DefineConstants>TRACE;ITCH</DefineConstants>
+    <Optimize>true</Optimize>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Itch-Debug|AnyCPU'">
+    <OutputPath>bin\Itch-Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;ITCH</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Steam-Debug|AnyCPU' ">
+    <OutputPath>bin\Steam-Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;STEAM</DefineConstants>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="0Harmony">
-      <HintPath>D:\andru\Desktop\Among Us\BepInEx\core\0Harmony.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Among Us\BepInEx\core\0Harmony.dll</HintPath>
     </Reference>
-    <Reference Include="Assembly-CSharp">
+    <Reference Include="Assembly-CSharp-Steam" Condition=" '$(Configuration)' == 'Steam-Debug' Or '$(Configuration)' == 'Steam-Release'">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Among Us\BepInEx\unhollowed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="BepInEx.Core">
-      <HintPath>D:\andru\Desktop\Among Us\BepInEx\core\BepInEx.Core.dll</HintPath>
+    <Reference Include="Assembly-CSharp-Itch" Condition=" '$(Configuration)' == 'Itch-Debug' Or '$(Configuration)' == 'Itch-Release'">
+      <HintPath>..\..\..\..\..\..\Games\among-us-windows\AmongUs\BepInEx\unhollowed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
+    </Reference>
+    <Reference Include="BepInEx.Core, Version=6.0.0.294, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Among Us\BepInEx\core\BepInEx.Core.dll</HintPath>
     </Reference>
     <Reference Include="BepInEx.IL2CPP">
-      <HintPath>D:\andru\Desktop\Among Us\BepInEx\core\BepInEx.IL2CPP.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Among Us\BepInEx\core\BepInEx.IL2CPP.dll</HintPath>
     </Reference>
     <Reference Include="Il2Cppmscorlib">
-      <HintPath>D:\andru\Desktop\Among Us\BepInEx\unhollowed\Il2Cppmscorlib.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Among Us\BepInEx\unhollowed\Il2Cppmscorlib.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -67,20 +87,17 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="UnhollowerBaseLib">
-      <HintPath>D:\andru\Desktop\Among Us\BepInEx\core\UnhollowerBaseLib.dll</HintPath>
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Among Us\BepInEx\core\UnhollowerBaseLib.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine">
-      <HintPath>D:\andru\Desktop\Among Us\BepInEx\unhollowed\UnityEngine.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Among Us\BepInEx\unhollowed\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>D:\andru\Desktop\Among Us\BepInEx\unhollowed\UnityEngine.CoreModule.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Among Us\BepInEx\unhollowed\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>D:\andru\Desktop\Among Us\BepInEx\unhollowed\UnityEngine.UI.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Among Us\BepInEx\unhollowed\UnityEngine.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

@@ -7,6 +7,7 @@ using System.Linq;
 using UnhollowerBaseLib;
 using CustomServersClient.UI;
 
+#if STEAM
 using RegionMenu = LEIOFKPCJOO;
 using RegionMenuButtonCallback = LEIOFKPCJOO.EOFFDAEHJLL;
 using RegionInfo = PGDIOIAMHOH;
@@ -14,6 +15,15 @@ using ServerInfo = LGEBLNDHJJM;
 using ServerManager = CIEEOAHHGFP;
 using ObjectPoolBehavior = JDBECDOFKPJ;
 using PassiveButton = ICDBJJCHIHJ;
+#elif ITCH
+using RegionMenu = KIPLKPEOBEO;
+using RegionMenuButtonCallback = KIPLKPEOBEO.KKOJKDJKEIK;
+using RegionInfo = KMFCKPLMGDK;
+using ServerInfo = PIOPAJCMNDK;
+using ServerManager = CJPEJFOJIOC;
+using ObjectPoolBehavior = NKEKOACGIFD; 
+using PassiveButton = AJGGJOBLDCP;
+#endif
 
 namespace CustomServersClient
 {
@@ -105,13 +115,21 @@ namespace CustomServersClient
         {
             public static bool Prefix(ref RegionMenuButtonCallback __instance)
             {
-                if (__instance.region.OPGGEMCHMEM == "MANAGE_SERVERS")
+#if STEAM
+                string buttonName = __instance.region.OPGGEMCHMEM;
+#elif ITCH
+                string buttonName = __instance.region.BEIIALBBLIK;
+#endif
+                if (buttonName == "MANAGE_SERVERS")
                 {
-                    
-                    if(_managementForm == null || _managementForm.IsDisposed)
+                    if (_managementForm == null || _managementForm.IsDisposed)
                         _managementForm = new ServersManagementForm();
 
+#if STEAM
                     _managementForm.regionMenu = __instance.field_Public_LEIOFKPCJOO_0;
+#elif ITCH
+                    _managementForm.regionMenu = __instance.field_Public_KIPLKPEOBEO_0;
+#endif
 
                     if (_managementForm.Visible)
                         _managementForm.Focus();
