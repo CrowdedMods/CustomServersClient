@@ -5,7 +5,7 @@ using System.IO;
 using System.Windows.Forms;
 
 #if STEAM
-using RegionMenu = HBEHAKJHDCN;
+using RegionMenu = BCDBFCNBNNI;
 #elif ITCH
 using RegionMenu = KIPLKPEOBEO;
 #endif

@@ -63,6 +63,7 @@
     </Reference>
     <Reference Include="BepInEx.Core, Version=6.0.0.294, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
     </Reference>
     <Reference Include="BepInEx.IL2CPP">
       <Private>False</Private>
