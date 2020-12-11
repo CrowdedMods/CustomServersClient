@@ -8,13 +8,13 @@ using UnhollowerBaseLib;
 using CustomServersClient.UI;
 
 #if STEAM
-using RegionMenu = BCDBFCNBNNI;
-using RegionMenuButtonCallback = BCDBFCNBNNI.ILGAFKJKONJ;
-using RegionInfo = JFBIIGMEKBD;
-using ServerInfo = IOLGIHKAODD;
-using ServerManager = AJPIDIBHHDJ;
-using ObjectPoolBehavior = OPDFFBMGHAI;
-using PassiveButton = KAKGOJKDMAD;
+using RegionMenu = CLIGCNHFBCO;
+using RegionMenuButtonCallback = CLIGCNHFBCO.EEJIMLMHMGO;
+using RegionInfo = OIBMKGDLGOG;
+using ServerInfo = PLFDMKKDEMI;
+using ServerManager = AOBNFCIHAJL;
+using ObjectPoolBehavior = FJBFFDFFBFO;
+using PassiveButton = HHMBANDDIOA;
 #elif ITCH
 using RegionMenu = KIPLKPEOBEO;
 using RegionMenuButtonCallback = KIPLKPEOBEO.KKOJKDJKEIK;
@@ -116,7 +116,7 @@ namespace CustomServersClient
             public static bool Prefix(ref RegionMenuButtonCallback __instance)
             {
 #if STEAM
-                string buttonName = __instance.region.LPLJNLBADPB;
+                string buttonName = __instance.region.CBMOEHMADOC;
 #elif ITCH
                 string buttonName = __instance.region.BEIIALBBLIK;
 #endif
@@ -126,7 +126,7 @@ namespace CustomServersClient
                         _managementForm = new ServersManagementForm();
 
 #if STEAM
-                    _managementForm.regionMenu = __instance.field_Public_BCDBFCNBNNI_0;
+                    _managementForm.regionMenu = __instance.field_Public_CLIGCNHFBCO_0;
 #elif ITCH
                     _managementForm.regionMenu = __instance.field_Public_KIPLKPEOBEO_0;
 #endif
