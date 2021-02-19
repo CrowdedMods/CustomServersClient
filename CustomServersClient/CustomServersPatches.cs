@@ -7,24 +7,6 @@ using System.Linq;
 using UnhollowerBaseLib;
 using CustomServersClient.UI;
 
-#if STEAM
-using RegionMenu = CLIGCNHFBCO;
-using RegionMenuButtonCallback = CLIGCNHFBCO.EEJIMLMHMGO;
-using RegionInfo = OIBMKGDLGOG;
-using ServerInfo = PLFDMKKDEMI;
-using ServerManager = AOBNFCIHAJL;
-using ObjectPoolBehavior = FJBFFDFFBFO;
-using PassiveButton = HHMBANDDIOA;
-#elif ITCH
-using RegionMenu = KIPLKPEOBEO;
-using RegionMenuButtonCallback = KIPLKPEOBEO.KKOJKDJKEIK;
-using RegionInfo = KMFCKPLMGDK;
-using ServerInfo = PIOPAJCMNDK;
-using ServerManager = CJPEJFOJIOC;
-using ObjectPoolBehavior = NKEKOACGIFD; 
-using PassiveButton = AJGGJOBLDCP;
-#endif
-
 namespace CustomServersClient
 {
     public static class CustomServersPatches
@@ -110,26 +92,17 @@ namespace CustomServersClient
         }
 
         
-        [HarmonyPatch(typeof(RegionMenuButtonCallback), nameof(RegionMenuButtonCallback.Method_Internal_Void_0))]
+        [HarmonyPatch(typeof(RegionMenu.c__DisplayClass2_0), nameof(RegionMenu.c__DisplayClass2_0.OnEnable))]
         public static class RegionMenuChooseOptionPatch
         {
-            public static bool Prefix(ref RegionMenuButtonCallback __instance)
+            public static bool Prefix(ref RegionMenu.c__DisplayClass2_0 __instance)
             {
-#if STEAM
-                string buttonName = __instance.region.CBMOEHMADOC;
-#elif ITCH
-                string buttonName = __instance.region.BEIIALBBLIK;
-#endif
-                if (buttonName == "MANAGE_SERVERS")
+                if (__instance.region.Name == "MANAGE_SERVERS")
                 {
                     if (_managementForm == null || _managementForm.IsDisposed)
                         _managementForm = new ServersManagementForm();
 
-#if STEAM
-                    _managementForm.regionMenu = __instance.field_Public_CLIGCNHFBCO_0;
-#elif ITCH
-                    _managementForm.regionMenu = __instance.field_Public_KIPLKPEOBEO_0;
-#endif
+                    _managementForm.regionMenu = __instance.__this;
 
                     if (_managementForm.Visible)
                         _managementForm.Focus();
