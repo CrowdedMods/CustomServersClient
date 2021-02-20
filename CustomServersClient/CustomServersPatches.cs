@@ -92,12 +92,12 @@ namespace CustomServersClient
         }
 
         
-        [HarmonyPatch(typeof(RegionMenu.c__DisplayClass2_0), nameof(RegionMenu.c__DisplayClass2_0.OnEnable))]
+        [HarmonyPatch(typeof(RegionMenu.c__DisplayClass2_0), "Method_Internal_Void_0")]
         public static class RegionMenuChooseOptionPatch
         {
             public static bool Prefix(ref RegionMenu.c__DisplayClass2_0 __instance)
             {
-                if (__instance.region.Name == "MANAGE_SERVERS")
+                if (__instance.region.PingServer == "MANAGE_SERVERS")
                 {
                     if (_managementForm == null || _managementForm.IsDisposed)
                         _managementForm = new ServersManagementForm();
