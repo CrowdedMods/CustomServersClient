@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomServersClient", "CustomServersClient\CustomServersClient.csproj", "{8424C5D8-334F-4CAB-B3C8-4D7635283B7F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomServersClient", "CustomServersClient\CustomServersClient.csproj", "{8424C5D8-334F-4CAB-B3C8-4D7635283B7F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Steam-Release|Any CPU = Steam-Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8424C5D8-334F-4CAB-B3C8-4D7635283B7F}.Itch-Debug|Any CPU.ActiveCfg = Itch-Debug|Any CPU
-		{8424C5D8-334F-4CAB-B3C8-4D7635283B7F}.Itch-Debug|Any CPU.Build.0 = Itch-Debug|Any CPU
+		{8424C5D8-334F-4CAB-B3C8-4D7635283B7F}.Itch-Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8424C5D8-334F-4CAB-B3C8-4D7635283B7F}.Itch-Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8424C5D8-334F-4CAB-B3C8-4D7635283B7F}.Itch-Release|Any CPU.ActiveCfg = Itch-Release|Any CPU
 		{8424C5D8-334F-4CAB-B3C8-4D7635283B7F}.Itch-Release|Any CPU.Build.0 = Itch-Release|Any CPU
 		{8424C5D8-334F-4CAB-B3C8-4D7635283B7F}.Steam-Debug|Any CPU.ActiveCfg = Steam-Debug|Any CPU
 		{8424C5D8-334F-4CAB-B3C8-4D7635283B7F}.Steam-Debug|Any CPU.Build.0 = Steam-Debug|Any CPU
-		{8424C5D8-334F-4CAB-B3C8-4D7635283B7F}.Steam-Release|Any CPU.ActiveCfg = Steam-Release|Any CPU
-		{8424C5D8-334F-4CAB-B3C8-4D7635283B7F}.Steam-Release|Any CPU.Build.0 = Steam-Release|Any CPU
+		{8424C5D8-334F-4CAB-B3C8-4D7635283B7F}.Steam-Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{8424C5D8-334F-4CAB-B3C8-4D7635283B7F}.Steam-Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
