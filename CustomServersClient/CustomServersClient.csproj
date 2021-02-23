@@ -8,16 +8,26 @@
 	
 	<Authors>andruzzzhka</Authors>
   </PropertyGroup>
-  <ItemGroup>
-      <Deobfuscate Include="$(AmongUs)\BepInEx\plugins\Reactor-$(GameVersion).dll" />
-      <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-      <PackageReference Include="Reactor.OxygenFilter.MSBuild" Version="0.2.3" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="System.Windows.Forms">
-      <HintPath>C:\Users\przeb\Desktop\RE\AU_Latest_Dump\mono\Managed\System.Windows.Forms.dll</HintPath>
-    </Reference>
-  </ItemGroup>
+    <PropertyGroup Condition="'$(GamePlatform)' == 'Steam'">
+        <GameVersion>2020.12.9s</GameVersion>
+        <DefineConstants>$(DefineConstants);STEAM</DefineConstants>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(GamePlatform)' == 'Itch'">
+        <GameVersion>2020.11.17i</GameVersion>
+        <DefineConstants>$(DefineConstants);ITCH</DefineConstants>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Deobfuscate Include="$(AmongUs)\BepInEx\plugins\Reactor-$(GameVersion).dll" />
+        <PackageReference Include="Reactor.OxygenFilter.MSBuild" Version="0.2.5" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="System.Windows.Forms">
+        <HintPath>$(AmongUs)\mono\Managed\System.Windows.Forms.dll</HintPath>
+      </Reference>
+    </ItemGroup>
   <Target Name="Copy" AfterTargets="Reobfuscate">
       <Copy SourceFiles="$(OutputPath)reobfuscated/$(AssemblyName)-$(GameVersion).dll" DestinationFolder="$(AmongUs)/BepInEx/plugins/" Condition="'$(Configuration)' == 'Debug'" />
   </Target>
