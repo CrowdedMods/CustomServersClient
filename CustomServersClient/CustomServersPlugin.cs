@@ -2,10 +2,14 @@
 using BepInEx.IL2CPP;
 using HarmonyLib;
 using System.Reflection;
+using Reactor;
 
 namespace CustomServersClient
 {
-    [BepInPlugin("com.andruzzzhka.customserversclient", "Custom Servers Client", "1.3.0")]
+    [BepInPlugin("com.andruzzzhka.customserversclient")]
+    [BepInProcess("Among Us.exe")]
+    [BepInDependency(ReactorPlugin.Id)]
+    [ReactorPluginSide(PluginSide.ClientOnly)]
     public class CustomServersPlugin : BasePlugin
     {
         public const string userDataPath = "UserData";
