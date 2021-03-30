@@ -16,7 +16,7 @@ Works (tested) on Itch as of **v2020.11.17i**.
 ## Versions
 | Mod version   | Game version  | BepInEx | Downloads |
 | ------------- | ------------- | ------- | --------- |
-| v1.5.0        | v2020.3.5     | [Reactor BepInEx](https://github.com/NuclearPowered/BepInEx/releases/download/6.0.0-reactor.16/BepInEx-6.0.0-reactor.16.zip) | [Releases](https://github.com/CrowdedMods/CustomServersClient/releases/tag/1.5.0) |
+| v1.5.0        | v2021.3.5     | [Reactor BepInEx](https://github.com/NuclearPowered/BepInEx/releases/download/6.0.0-reactor.16/BepInEx-6.0.0-reactor.16.zip) | [Releases](https://github.com/CrowdedMods/CustomServersClient/releases/tag/1.5.0) |
 | v1.4.0        | v2020.12.9s   | [Reactor BepInEx](https://github.com/NuclearPowered/BepInEx/releases/download/6.0.0-reactor.16/BepInEx-6.0.0-reactor.16.zip) | [Releases](https://github.com/CrowdedMods/CustomServersClient/releases/tag/1.4.0) |
 | v1.3.0        | v2020.12.9s   | [BepInEx IL2CPP #325](https://builds.bepis.io/projects/bepinex_be/325/BepInEx_UnityIL2CPP_x86_3d75179_6.0.0-be.325.zip) | [Releases](https://github.com/CrowdedMods/CustomServersClient/releases/tag/1.3.0) |
 | v1.2.1        | v2020.11.11s and i  | [BepInEx IL2CPP #297](https://builds.bepis.io/projects/bepinex_be/297/BepInEx_UnityIL2CPP_x86_7801f9e_6.0.0-be.297.zip) | [Releases](https://github.com/CrowdedMods/CustomServersClient/releases/tag/1.2.1) |
