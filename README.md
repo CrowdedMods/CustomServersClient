@@ -29,6 +29,9 @@ Works on Itch as of **v2020.11.17i**.
 4. Compiled dll should be automatically copied to your `BepInEx/plugins` folder (Reactor feature)
 ## Screenshot
 ![screenshot_0](https://cdn.discordapp.com/attachments/759066383090188308/763331715740729364/unknown.png)
+## Hall of Fame
+- latest version is available thanks to [updated Unify](https://github.com/MoltenMods/Unify)
+
 
 ## TO-DO
 - Make the mod work with latest Among Us (v2021.3.5)

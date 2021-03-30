@@ -4,8 +4,11 @@ using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 using UnhollowerBaseLib;
 using CustomServersClient.UI;
+using Il2CppSystem.Diagnostics.Tracing;
+using Il2CppSystem.Globalization;
 
 namespace CustomServersClient
 {
@@ -13,9 +16,8 @@ namespace CustomServersClient
     {
         public static List<CustomServerInfo> customServers = new List<CustomServerInfo>();
 
-        static RegionInfo[] _defaultRegions = new RegionInfo[3];
-
-        static bool _firstRun = true;
+        private static IRegionInfo[] _defaultRegions = ServerManager.DefaultRegions;
+        
         static ServersManagementForm _managementForm;
 
         [HarmonyPatch(typeof(RegionMenu), nameof(RegionMenu.OnEnable))]
@@ -26,16 +28,6 @@ namespace CustomServersClient
             public static bool Prefix(ref RegionMenu __instance)
             {
                 ClearOnClickAction(__instance.ButtonPool);
-
-                if (_firstRun)
-                {
-                    for (int i = 0; i < 3; i++)
-                    {
-                        _defaultRegions[i] = ServerManager.DefaultRegions[i];
-                    }
-
-                    _firstRun = false;
-                }
 
                 Directory.CreateDirectory(CustomServersPlugin.userDataPath);
 
@@ -51,9 +43,10 @@ namespace CustomServersClient
 
                 if (ServerManager.DefaultRegions.Count != 4 + customServers.Count || forceReloadServers)
                 {
-                    var regions = new RegionInfo[4 + customServers.Count];
+                    var regions = new IRegionInfo[4 + customServers.Count];
 
-                    regions[0] = new RegionInfo("Manage servers...", "MANAGE_SERVERS", null);
+                    regions[0] = new DnsRegionInfo("Manage servers...", "Manage servers...", StringNames.NoTranslation,
+                        "Manage servers...").Cast<IRegionInfo>();
 
                     for (int i = 0; i < 3; i++)
                     {
@@ -64,10 +57,12 @@ namespace CustomServersClient
                     {
                         Il2CppReferenceArray<ServerInfo> servers = new ServerInfo[1] { new ServerInfo(customServers[i].name, customServers[i].ip, (ushort)customServers[i].port) };
 
-                        regions[i + 4] = new RegionInfo(customServers[i].name, "0", servers);
+                        regions[i + 4] = new DnsRegionInfo(customServers[i].ip, customServers[i].name, StringNames.NoTranslation, servers).Cast<IRegionInfo>();
                     }
 
                     ServerManager.DefaultRegions = regions;
+                    ServerManager.Instance.AvailableRegions = regions;
+                    ServerManager.Instance.SaveServers();
                 }
 
                 return true;
@@ -97,7 +92,7 @@ namespace CustomServersClient
         {
             public static bool Prefix(ref RegionMenu.c__DisplayClass2_0 __instance)
             {
-                if (__instance.region.PingServer == "MANAGE_SERVERS")
+                if (__instance.region.PingServer == "Manage servers...")
                 {
                     if (_managementForm == null || _managementForm.IsDisposed)
                         _managementForm = new ServersManagementForm();
