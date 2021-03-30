@@ -1,8 +1,8 @@
 # Custom Servers Client
 An in-game client for custom servers for Among Us. This works on both the Steam and Itch versions of the game.
 
-Works on Steam as of **v2020.12.9s**.  
-Works on Itch as of **v2020.11.17i**.
+Works on Steam as of **v2020.3.5s**.  
+Works (tested) on Itch as of **v2020.11.17i**.
 
 ## Installation (on Steam)
 1. Download latest [BepInEx (Reactor fork)](https://github.com/NuclearPowered/BepInEx/releases)
