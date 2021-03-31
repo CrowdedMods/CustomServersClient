@@ -35,6 +35,6 @@ Works (tested) on Itch as of **v2020.11.17i**.
 
 
 ## TO-DO
-- Make the mod work with latest Among Us (v2021.3.5)
+- Make the mod work with latest Among Us (Airship)
 - Change WinForms to imgui from Reactor
 - Make newer screenshot
