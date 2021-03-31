@@ -7,7 +7,7 @@ Works (tested) on Itch as of **v2020.11.17i**.
 ## Installation (on Steam)
 1. Download latest [BepInEx (Reactor fork)](https://github.com/NuclearPowered/BepInEx/releases)
 2. Extract all files from zipped archive and put them in Among Us directory (where Among Us.exe is)
-3. Download [latest Reactor.dll for 2020.3.5s](https://nightly.link/NuclearPowered/Reactor/workflows/main/master) and put it in `YourAmongUsDirectory/BepInEx/plugins`
+3. Download [latest Reactor.dll for 2021.3.5s](https://nightly.link/NuclearPowered/Reactor/workflows/main/master) and put it in `YourAmongUsDirectory/BepInEx/plugins`
 4. Download latest CustomServersClient.zip from releases, unzip it. 
 5. Put unzipped content of `CustomServersClient_v.x.x.x_Steam.zip` in `YourAmongUsDirectory`
 
