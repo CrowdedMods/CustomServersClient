@@ -1,14 +1,9 @@
 ﻿using HarmonyLib;
-using InnerNet;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System;
 using UnhollowerBaseLib;
 using CustomServersClient.UI;
-using Il2CppSystem.Diagnostics.Tracing;
-using Il2CppSystem.Globalization;
 
 namespace CustomServersClient
 {
@@ -46,7 +41,7 @@ namespace CustomServersClient
                     var regions = new IRegionInfo[4 + customServers.Count];
 
                     regions[0] = new DnsRegionInfo("Manage servers...", "Manage servers...", StringNames.NoTranslation,
-                        "Manage servers...").Cast<IRegionInfo>();
+                        "Manage servers...", 0).Cast<IRegionInfo>();
 
                     for (int i = 0; i < 3; i++)
                     {
@@ -55,7 +50,7 @@ namespace CustomServersClient
 
                     for (int i = 0; i < customServers.Count; i++)
                     {
-                        Il2CppReferenceArray<ServerInfo> servers = new ServerInfo[1] { new ServerInfo(customServers[i].name, customServers[i].ip, (ushort)customServers[i].port) };
+                        Il2CppReferenceArray<ServerInfo> servers = new [] { new ServerInfo(customServers[i].name, customServers[i].ip, (ushort)customServers[i].port) };
 
                         regions[i + 4] = new DnsRegionInfo(customServers[i].ip, customServers[i].name, StringNames.NoTranslation, servers).Cast<IRegionInfo>();
                     }
@@ -87,17 +82,17 @@ namespace CustomServersClient
         }
 
         
-        [HarmonyPatch(typeof(RegionMenu.c__DisplayClass2_0), "Method_Internal_Void_0")]
+        [HarmonyPatch(typeof(RegionMenu), nameof(RegionMenu.ChooseOption))]
         public static class RegionMenuChooseOptionPatch
         {
-            public static bool Prefix(ref RegionMenu.c__DisplayClass2_0 __instance)
+            public static bool Prefix(RegionMenu __instance, [HarmonyArgument(0)] IRegionInfo region)
             {
-                if (__instance.region.PingServer == "Manage servers...")
+                if (region.PingServer == "Manage servers...")
                 {
                     if (_managementForm == null || _managementForm.IsDisposed)
                         _managementForm = new ServersManagementForm();
 
-                    _managementForm.regionMenu = __instance.__this;
+                    _managementForm.regionMenu = __instance;
 
                     if (_managementForm.Visible)
                         _managementForm.Focus();
