@@ -31,12 +31,10 @@ Works (tested) on Itch as of **v2020.11.17i**.
 3. Select correct option (for example Steam-Release) and build it.
 4. Compiled dll should be automatically copied to your `BepInEx/plugins` folder (Reactor feature)
 ## Screenshot
-![screenshot_0](https://cdn.discordapp.com/attachments/759066383090188308/763331715740729364/unknown.png)
+![screenshot_0](https://media.discordapp.net/attachments/787987397203066911/830778408333213716/unknown.png)
 ## Hall of Fame
 - latest version is available thanks to [updated Unify](https://github.com/MoltenMods/Unify)
 
 
 ## TO-DO
-- Make the mod work with latest Among Us (Airship)
-- Change WinForms to imgui from Reactor
-- Make newer screenshot
+- Change WinForms to unstripped imgui from Reactor
