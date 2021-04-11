@@ -6,7 +6,7 @@ using Reactor;
 
 namespace CustomServersClient
 {
-    [BepInPlugin("com.andruzzzhka.customserversclient")]
+    [BepInPlugin(Id)]
     [BepInProcess("Among Us.exe")]
     [BepInDependency(ReactorPlugin.Id)]
     [ReactorPluginSide(PluginSide.ClientOnly)]
@@ -14,16 +14,17 @@ namespace CustomServersClient
     {
         public const string userDataPath = "UserData";
         public const string customServersFilePath = "CustomServers.json";
+        public const string Id = "com.andruzzzhka.customserversclient";
 
-        static internal BepInEx.Logging.ManualLogSource Logger;
+        internal static BepInEx.Logging.ManualLogSource Logger;
 
-        static Harmony _harmony;
+        static Harmony _harmony = new Harmony(Id);
 
         public override void Load()
         {
             Logger = Log;
 
-            _harmony = Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), "com.andruzzzhka.customserversclient");
+            _harmony.PatchAll();
 
             Logger.LogDebug("Applied Harmony patches!");
         }

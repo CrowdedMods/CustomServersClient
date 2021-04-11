@@ -37,7 +37,7 @@ namespace CustomServersClient.UI
                     CustomServersPlugin.Logger.LogWarning($"Resolving IP address for domain \"{address}\"...");
 
                     var adresses = Dns.GetHostAddresses(address);
-                    if (adresses != null && adresses.Length > 0)
+                    if (adresses.Length > 0)
                     {
                         address = adresses[0].ToString();
                     }
