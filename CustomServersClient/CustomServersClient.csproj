@@ -16,7 +16,7 @@
 
     <ItemGroup>
       <Reference Include="System.Windows.Forms">
-        <HintPath>$(AmongUs)\mono\Managed\System.Windows.Forms.dll</HintPath>
+        <HintPath>$(AmongUs)\BepInEx\plugins\CustomServersClient\System.Windows.Forms.dll</HintPath>
       </Reference>
     </ItemGroup>
   <Target Name="Copy" AfterTargets="Reobfuscate">
