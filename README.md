@@ -3,7 +3,7 @@
 An in-game client for custom servers for Among Us. This works on both the Steam and Itch versions of the game.
 
 Works (confirmed) on Steam from **v2020.12.9s** to **v2021.6.15s**.<br/>
-Works on Epic and Itch (not tested) from **v2020.12.9s** to **v2021.6.15s**
+Works on Epic and Itch (not tested) from **v2020.12.9s** to **v2021.6.15s** <br/>
 Works (confirmed) on Itch as of **v2020.11.17i**.
 
 ## Installation (on Steam)
