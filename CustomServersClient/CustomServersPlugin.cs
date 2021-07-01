@@ -8,8 +8,6 @@ namespace CustomServersClient
 {
     [BepInPlugin(Id)]
     [BepInProcess("Among Us.exe")]
-    [BepInDependency(ReactorPlugin.Id)]
-    [ReactorPluginSide(PluginSide.ClientOnly)]
     public class CustomServersPlugin : BasePlugin
     {
         public const string userDataPath = "UserData";

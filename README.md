@@ -15,15 +15,17 @@ Works (tested) on Itch as of **v2020.11.17i**.
 ## Installation (on Steam)
 1. Download latest [BepInEx (Reactor fork)](https://github.com/NuclearPowered/BepInEx/releases)
 2. Extract all files from zipped archive and put them in `YourAmongUsDirectory` (where Among Us.exe is)
-3. Download [latest Reactor.dll for 2021.4.12s](https://nightly.link/NuclearPowered/Reactor/workflows/main/master) and put it in `YourAmongUsDirectory/BepInEx/plugins`
-4. Download latest CustomServersClient.zip from releases, unzip it. 
-5. Put unzipped content of `CustomServersClient_vx.x.x_Steam.zip` in `YourAmongUsDirectory\BepInEx\plugins` (for versions v1.5.0 and lower, just put the content in `YourAmongUsDirectory`)
+3. Download latest CustomServersClient.zip from releases, unzip it. 
+4. Put unzipped content of `CustomServersClient_vx.x.x_Steam.zip` in `YourAmongUsDirectory\BepInEx\plugins` (for versions v1.5.0 and lower, just put the content in `YourAmongUsDirectory`)
 
-*`YourAmongUsDirectory` is your Among Us root directory
+*`YourAmongUsDirectory` is your Among Us root directory </br>
+[Reactor](https://github.com/NuclearPowered/Reactor) is required for versions v1.4.0 - v1.8.0
 
 ## Versions
 | Mod version   | Game version  | BepInEx | Downloads |
 | ------------- | ------------- | ------- | --------- |
+| v1.9.0        | v2021.6.15    | [Reactor BepInEx](https://github.com/NuclearPowered/BepInEx/releases/download/6.0.0-reactor.18%2Bstructfix/BepInEx-6.0.0-reactor.18+structfix.zip) | [Releases](https://github.com/CrowdedMods/CustomServersClient/releases/tag/1.9.0) |
+| v1.8.0        | v2021.5.10s   | [Reactor BepInEx](https://github.com/NuclearPowered/BepInEx/releases/download/6.0.0-reactor.18%2Bstructfix/BepInEx-6.0.0-reactor.18+structfix.zip) | [Releases](https://github.com/CrowdedMods/CustomServersClient/releases/tag/1.8.0) |
 | v1.7.0        | v2021.4.12 and 4.14  | [Reactor BepInEx](https://github.com/NuclearPowered/BepInEx/releases/download/6.0.0-reactor.18%2Bstructfix/BepInEx-6.0.0-reactor.18+structfix.zip) | [Releases](https://github.com/CrowdedMods/CustomServersClient/releases/tag/1.7.0) |
 | v1.6.0        | v2021.3.31.3  | [Reactor BepInEx](https://github.com/NuclearPowered/BepInEx/releases/download/6.0.0-reactor.18%2Bstructfix/BepInEx-6.0.0-reactor.18+structfix.zip) | [Releases](https://github.com/CrowdedMods/CustomServersClient/releases/tag/1.6.0) |
 | v1.5.0        | v2021.3.5     | [Reactor BepInEx](https://github.com/NuclearPowered/BepInEx/releases/download/6.0.0-reactor.16/BepInEx-6.0.0-reactor.16.zip) | [Releases](https://github.com/CrowdedMods/CustomServersClient/releases/tag/1.5.0) |
@@ -43,6 +45,7 @@ Works (tested) on Itch as of **v2020.11.17i**.
 ## Hall of Fame
 - latest version is available thanks to [updated Unify](https://github.com/MoltenMods/Unify)
 
-
 ## TO-DO
 - Change WinForms to unstripped imgui from Reactor
+
+*This mod is not affiliated with Among Us or Innersloth LLC, and the content contained therein is not endorsed or otherwise sponsored by Innersloth LLC. Portions of the materials contained herein are property of Innersloth LLC. © Innersloth LLC.*
