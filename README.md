@@ -2,15 +2,9 @@
 # Custom Servers Client
 An in-game client for custom servers for Among Us. This works on both the Steam and Itch versions of the game.
 
-Works (tested) on Steam from **v2020.12.9s** to **v2021.4.14s**.<br/>
-Works on Steam from **v2020.09.22s** to **v2021.4.14s**.<br/>
-Works (tested) on Itch as of **v2020.11.17i**.
-
-> :warning: **WARNING** :warning:
-> CustomServersClient uses Reactor.
-> Reactor currently uses custom, modded handshake even when you only have this mod installed. To play properly also on official Among Us servers:
-> 1. Disable anti-cheat, because it gets triggered by CustomRPCs
-> 2. Use [patched Reactor](https://cdn.discordapp.com/attachments/787987336846770186/832930668907855872/Reactor-2021.4.12s.dll) without a modded handshake because it wasn't yet implemented in Impostor
+Works (confirmed) on Steam from **v2020.12.9s** to **v2021.6.15s**.<br/>
+Works on Epic and Itch (not tested) from **v2020.12.9s** to **v2021.6.15s**
+Works (confirmed) on Itch as of **v2020.11.17i**.
 
 ## Installation (on Steam)
 1. Download latest [BepInEx (Reactor fork)](https://github.com/NuclearPowered/BepInEx/releases)
